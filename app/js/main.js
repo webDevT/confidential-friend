@@ -1,81 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-	const textarea = document.querySelector('.textarea-wrapper textarea');
-	const clearButton = document.querySelector('.clear-button');
-	const shareButton = document.querySelector('.share-button');
+document.addEventListener("DOMContentLoaded", () => {
+    const clearBtn = document.getElementById('button-clear');
+    const textarea = document.getElementById('textarea');
 
-	const syncInputState = () => {
-		if (!textarea) {
-			return;
-		}
+    clearBtn.addEventListener('click', () => {
+        textarea.value = '';
+    });
 
-		const hasValue = textarea.value.trim().length > 0;
 
-		if (clearButton) {
-			clearButton.classList.toggle('is-visible', hasValue);
-		}
+	
+});
 
-		if (shareButton) {
-			shareButton.disabled = !hasValue;
-			shareButton.classList.toggle('is-disabled', !hasValue);
-		}
-	};
 
-	if (textarea) {
-		textarea.addEventListener('input', syncInputState);
-		syncInputState();
-	}
+document.querySelector('.copy-button').addEventListener('click', () => {
+    const text = document.querySelector('.message-card__text p').innerText;
 
-	if (clearButton && textarea) {
-		clearButton.addEventListener('click', () => {
-			textarea.value = '';
-			textarea.focus();
-			syncInputState();
-		});
-	}
-
-	if (shareButton) {
-		shareButton.addEventListener('click', () => {
-			if (!shareButton.disabled) {
-				window.location.href = 'response.html';
-			}
-		});
-	}
-
-	const copyButton = document.querySelector('.message-card__copy .icon-button');
-	const messageText = document.querySelector('.message-card__text p');
-	const copyFeedback = document.querySelector('.copy-feedback');
-	let copyTimeoutId = null;
-
-	if (copyButton && messageText) {
-		copyButton.addEventListener('click', async () => {
-			const textToCopy = messageText.textContent.trim();
-
-			try {
-				if (navigator.clipboard && navigator.clipboard.writeText) {
-					await navigator.clipboard.writeText(textToCopy);
-				} else {
-					const tempArea = document.createElement('textarea');
-					tempArea.value = textToCopy;
-					document.body.appendChild(tempArea);
-					tempArea.select();
-					document.execCommand('copy');
-					document.body.removeChild(tempArea);
-				}
-
-				if (copyFeedback) {
-					copyFeedback.classList.add('is-visible');
-
-					if (copyTimeoutId) {
-						clearTimeout(copyTimeoutId);
-					}
-
-					copyTimeoutId = setTimeout(() => {
-						copyFeedback.classList.remove('is-visible');
-					}, 2000);
-				}
-			} catch (error) {
-				console.error('Copy failed', error);
-			}
-		});
-	}
+    navigator.clipboard.writeText(text)
+        
 });
