@@ -1,0 +1,171 @@
+@import "vars"
+@import "fonts"
+
+body * 
+    box-sizing: border-box
+body
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    background: #f5f5f7
+    margin: 0
+    color: #222
+    font-size: 18px
+    box-sizing: border-box
+.app 
+    padding: 50px
+.container
+    max-width: 750px
+    margin: 0 auto
+    background: #fff
+    padding: 50px 40px 60px 40px
+    border-radius: 8px
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1)
+
+h1
+    margin-top: 0
+    margin-bottom: 15px
+    text-align: center
+    line-height: 1
+    font-weight: 600
+    font-size: 32px
+
+textarea
+    width: 100%
+    min-height: 200px
+    border: 1px solid rgba(13, 13, 13, 0.05)
+    border-radius: 8px
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08), 0 0 1px rgba(15, 23, 42, 0.12)
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    padding: 25px 25px
+    padding-right: 50px
+    font-size: 18px
+    outline: none
+    color: #222
+.textarea-wrapper
+    width: 100% 
+    position: relative
+.clear-button
+    position: absolute 
+    top: 17px 
+    right: 15px
+    opacity: 0
+    width: 35px 
+    height: 35px
+    background: rgba(#f5f5f5, 0)
+    display: flex 
+    justify-content: center 
+    align-items: center
+    border-radius: 50%
+    transition: all 0.3s
+    pointer-events: none
+.clear-button img
+    width: 15px
+    height: 15px
+.clear-button.is-visible
+    opacity: 1
+    pointer-events: auto
+    cursor: pointer
+.clear-button.is-visible:hover
+    background: rgba(#f5f5f5, 1)
+.button
+    display: flex 
+    justify-content: center 
+    align-items: center
+    padding: 16px 40px
+    background: #222
+    color: #fff
+    text-decoration: none
+    border-radius: 30px
+    line-height: 1
+    transition: all 0.3s
+    cursor: pointer
+    width: 230px
+.button.is-disabled,
+.button:disabled
+    opacity: 0.45
+    cursor: not-allowed
+    pointer-events: none
+.button:hover 
+    background: rgba(#222, 0.95)
+.sub-title 
+    text-align: center
+    font-size: 18px
+.header 
+    margin-bottom: 30px
+.buttons-wrapper
+    margin-top: 20px
+    display: flex
+    align-items: center
+.buttons-wrapper--center 
+    justify-content: center 
+.primary-buttons
+    gap: 16px
+.button--secondary
+    background: rgba(34, 34, 34, 0.08)
+    color: #222
+    border: 1px solid transparent
+    box-shadow: none
+.button--secondary:hover 
+    background: rgba(34, 34, 34, 0.2)
+.message-card
+    width: 100%
+    min-height: 200px
+    border: 1px solid rgba(13, 13, 13, 0.05)
+    border-radius: 8px
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08), 0 0 1px rgba(15, 23, 42, 0.12)
+    padding: 25px 25px
+    font-size: 18px
+    outline: none
+    color: #222
+    position: relative
+.message-card__text p
+    margin: 0
+    line-height: 1.7
+    font-size: 20px
+.message-card__text p strong
+    display: block
+    font-weight: 600
+    margin-bottom: 6px
+.message-card__body
+    display: flex
+    flex-direction: column
+    gap: 20px
+.message-card__copy
+    position: absolute 
+    top: 17px 
+    right: 15px
+    width: 35px 
+    height: 35px
+    background: rgba(#f5f5f5, 0)
+    display: flex 
+    justify-content: center 
+    align-items: center
+    border-radius: 50%
+    transition: all 0.3s
+    border: none 
+    outline: none
+    cursor: pointer
+    z-index: 11
+    img 
+        width: 16px
+.message-card__copy:hover
+    background: rgba(#f5f5f5, 1)
+.copy-feedback
+    font-size: 14px
+    color: #4b4b52
+    opacity: 0
+    transform: translateY(-110%) translateX(-50%)
+    transition: opacity 0.2s ease, transform 0.2s ease
+    position: absolute
+    top: 0%
+    left: 50% 
+    display: block 
+    white-space: nowrap
+    background: #222
+    padding: 4px 10px
+    color: #fff
+    border-radius: 20px
+    
+.copy-feedback.is-visible
+    opacity: 1
+
+@import "media"
