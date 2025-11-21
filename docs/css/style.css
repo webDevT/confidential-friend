@@ -13,6 +13,13 @@ body {
           box-sizing: border-box;
 }
 
+button {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  display: block;
+}
+
 .app {
   padding: 50px;
 }
@@ -54,45 +61,6 @@ textarea {
 .textarea-wrapper {
   width: 100%;
   position: relative;
-}
-
-.clear-button {
-  position: absolute;
-  top: 17px;
-  right: 15px;
-  opacity: 0;
-  width: 35px;
-  height: 35px;
-  background: rgba(245, 245, 245, 0);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 50%;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  pointer-events: none;
-}
-
-.clear-button img {
-  width: 15px;
-  height: 15px;
-}
-
-.clear-button.is-visible {
-  opacity: 1;
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.clear-button.is-visible:hover {
-  background: whitesmoke;
 }
 
 .button {
@@ -139,16 +107,13 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 16px;
 }
 
 .buttons-wrapper--center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.primary-buttons {
-  gap: 16px;
 }
 
 .button--secondary {
@@ -163,127 +128,17 @@ textarea {
   background: rgba(34, 34, 34, 0.2);
 }
 
-.message-card {
-  width: 100%;
-  min-height: 200px;
-  border: 1px solid rgba(13, 13, 13, 0.05);
-  border-radius: 8px;
-  -webkit-box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08), 0 0 1px rgba(15, 23, 42, 0.12);
-          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08), 0 0 1px rgba(15, 23, 42, 0.12);
-  padding: 25px 25px;
-  font-size: 18px;
-  outline: none;
-  color: #222;
-  position: relative;
-}
-
-.message-card__text p {
+.message-text {
   margin: 0;
   line-height: 1.7;
   font-size: 20px;
 }
 
-.message-card__text p strong {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.message-card__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px;
-}
-
-.message-card__copy {
-  position: absolute;
-  top: 17px;
-  right: 15px;
-  width: 35px;
-  height: 35px;
-  background: rgba(245, 245, 245, 0);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 50%;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  z-index: 11;
-}
-.message-card__copy img {
-  width: 16px;
-}
-
-.message-card__copy:hover {
-  background: whitesmoke;
-}
-
-.copy-feedback {
-  font-size: 14px;
-  color: #4b4b52;
-  opacity: 0;
-  -webkit-transform: translateY(-110%) translateX(-50%);
-      -ms-transform: translateY(-110%) translateX(-50%);
-          transform: translateY(-110%) translateX(-50%);
-  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
-  transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
-  -o-transition: opacity 0.2s ease, transform 0.2s ease;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  display: block;
-  white-space: nowrap;
-  background: #222;
-  padding: 4px 10px;
-  color: #fff;
-  border-radius: 20px;
-}
-
-.copy-feedback.is-visible {
-  opacity: 1;
-}
-
-/*==========  Desktop First  ==========*/
-/* Large Devices, Wide Screens */
-@media only screen and (max-width: 1200px) {
-  /**/
-}
-/* Medium Devices, Desktops */
-@media only screen and (max-width: 992px) {
-  /**/
-}
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   /**/
-  .message-card {
-    padding: 25px 15px;
-  }
   textarea {
     padding: 25px 15px;
-  }
-  .message-card__copy {
-    right: 5px;
-    top: 5px;
-  }
-  .message-card__copy:hover {
-    background: transparent;
   }
   .app {
     padding: 40px 20px;
@@ -306,65 +161,16 @@ textarea {
   .buttons-wrapper .button {
     width: 100%;
   }
-  .copy-feedback {
-    font-size: 12px;
-    -webkit-transform: translateY(-100%) translateX(0%);
-        -ms-transform: translateY(-100%) translateX(0%);
-            transform: translateY(-100%) translateX(0%);
-    left: auto;
-    right: 0;
-  }
-  .clear-button {
-    right: 5px;
-    top: 5px;
-    width: 30px;
-    height: 30px;
-  }
-  .clear-button img {
-    width: 12px;
-  }
 }
-/* Extra Small Devices, Phones */
+
 @media only screen and (max-width: 480px) {
   /**/
-  body {
-    font-size: 16px;
-  }
-  .sub-title {
-    font-size: 16px;
-  }
-  .message-card__text p {
-    font-size: 16px;
-  }
-  textarea {
+  body,
+.message-text,
+textarea {
     font-size: 16px;
   }
   .button {
     font-size: 18px;
   }
-}
-/* Custom, iPhone Retina */
-@media only screen and (max-width: 320px) {
-  /**/
-}
-/*==========  Mobile First  ==========*/
-/* Custom, iPhone Retina */
-@media only screen and (min-width: 320px) {
-  /**/
-}
-/* Extra Small Devices, Phones */
-@media only screen and (min-width: 480px) {
-  /**/
-}
-/* Small Devices, Tablets */
-@media only screen and (min-width: 768px) {
-  /**/
-}
-/* Medium Devices, Desktops */
-@media only screen and (min-width: 992px) {
-  /**/
-}
-/* Large Devices, Wide Screens */
-@media only screen and (min-width: 1200px) {
-  /**/
 }
